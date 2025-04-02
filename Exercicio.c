@@ -10,7 +10,7 @@ int main()
     printf("Digite hora, minuto e segundo: ");
     scanf("%f %f %f", &hora, &min, &seg);
     tchau = (hora*3600 + min*60 + seg);
-    oi = (min + seg/60);
+    oi = ( hora*60 + min + seg/60);
 
     if (hora>1 && min>15)
     {
