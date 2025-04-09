@@ -32,7 +32,7 @@ int main()
     }
 
     else {
-    printf("Reprovado direto e sua media foi %.0f\n e a frequencia %d\n",media, frequencia);
+    printf("Reprovado direto e sua media foi %.0f\n e a frequencia %d%%",media, frequencia);
 }
 return 0;
 }
