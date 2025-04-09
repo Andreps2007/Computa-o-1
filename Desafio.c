@@ -27,3 +27,4 @@ int main()
         printf("O valor a ser pago eh %d", C3);
 
     return 0;
+}
