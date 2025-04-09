@@ -15,16 +15,16 @@ int main()
     }
     else if (30>=C && C>10)
     {
-        printf("O valor a ser pago eh %d", C1);
+        printf("O valor a ser pago eh %d reais", C1);
     }
 
     else if (100>=C && C>31)
     {
-        printf("O valor a ser pago eh %d", C2);
+        printf("O valor a ser pago eh %d reais", C2);
 
     }
     else
-        printf("O valor a ser pago eh %d", C3);
+        printf("O valor a ser pago eh %d reais", C3);
 
     return 0;
 }
