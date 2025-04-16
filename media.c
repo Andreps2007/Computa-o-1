@@ -17,7 +17,7 @@ int main()
   N2= 3*n2;
   N3= 5*n3;
         media =((N1+N2+N3)/10);
-        printf("A sua media ponderada desses valores Ã© %f\n", media);
+        printf("A sua media ponderada desses valores eh %f\n", media);
         printf("Essa foi a %d media de %d\n", i, n);
         i= i + 1;
     }
