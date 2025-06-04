@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-// Função que preenche vetor com valores aleatórios entre 0 e lim
 void preencheVetor(int v[], int n, int lim) {
     for (int i = 0; i < n; i++) {
         v[i] = rand() % (lim + 1);
@@ -11,7 +10,7 @@ void preencheVetor(int v[], int n, int lim) {
 
 int main() {
     int vetor[10];
-    srand(time(NULL));  // inicializa gerador de números aleatórios
+    srand(time(NULL)); 
 
     preencheVetor(vetor, 10, 50);
 
