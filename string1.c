@@ -1,36 +1,28 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
+#include <ctype.h>
 
-void contar_vogais(char frase[]) {
+int main() {
+    char frase[200];
     int a = 0, e = 0, i = 0, o = 0, u = 0;
 
+    printf("Digite uma frase:\n");
+    fgets(frase, sizeof(frase), stdin);
+
     for (int j = 0; frase[j] != '\0'; j++) {
-        char c = tolower(frase[j]);
-        if (c == 'a') a++;
-        else if (c == 'e') e++;
-        else if (c == 'i') i++;
-        else if (c == 'o') o++;
-        else if (c == 'u') u++;
+        char letra = tolower(frase[j]);
+        if (letra == 'a') a++;
+        else if (letra == 'e') e++;
+        else if (letra == 'i') i++;
+        else if (letra == 'o') o++;
+        else if (letra == 'u') u++;
     }
 
-    printf("a : ");
-    for (int j = 0; j < a; j++) printf("*");
-    printf(" (%d)\n", a);
+    printf("a : "); for (int k = 0; k < a; k++) printf("*"); printf(" (%d)\n", a);
+    printf("e : "); for (int k = 0; k < e; k++) printf("*"); printf(" (%d)\n", e);
+    printf("i : "); for (int k = 0; k < i; k++) printf("*"); printf(" (%d)\n", i);
+    printf("o : "); for (int k = 0; k < o; k++) printf("*"); printf(" (%d)\n", o);
+    printf("u : "); for (int k = 0; k < u; k++) printf("*"); printf(" (%d)\n", u);
 
-    printf("e : ");
-    for (int j = 0; j < e; j++) printf("*");
-    printf(" (%d)\n", e);
-
-    printf("i : ");
-    for (int j = 0; j < i; j++) printf("*");
-    printf(" (%d)\n", i);
-
-    printf("o : ");
-    for (int j = 0; j < o; j++) printf("*");
-    printf(" (%d)\n", o);
-
-    printf("u : ");
-    for (int j = 0; j < u; j++) printf("*");
-    printf(" (%d)\n", u);
+    return 0;
 }
