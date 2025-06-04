@@ -1,29 +1,32 @@
 #include <stdio.h>
-#include <ctype.h>
 #include <string.h>
+#include <ctype.h>
 
-int eh_vogal(char c) {
-    c = tolower(c);
-    return (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u');
-}
+int main() {
+    char nome[100], bairro[100], senha[200] = "";
+    printf("Digite seu nome:\n");
+    fgets(nome, sizeof(nome), stdin);
+    printf("Digite seu bairro:\n");
+    fgets(bairro, sizeof(bairro), stdin);
 
-void gerar_senha(char nome[], char bairro[]) {
-    char senha[100] = "";
+
+    nome[strcspn(nome, "\n")] = '\0';
+    bairro[strcspn(bairro, "\n")] = '\0';
 
     for (int i = 0; nome[i] != '\0'; i++) {
-        if (eh_vogal(nome[i]))
-            strncat(senha, &nome[i], 1);
+        char c = toupper(nome[i]);
+        if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+            strncat(senha, &c, 1);
+        }
     }
 
     for (int i = 0; bairro[i] != '\0'; i++) {
-        if (eh_vogal(bairro[i]))
-            strncat(senha, &bairro[i], 1);
-    }
-
-    // Convertendo para maiúsculas
-    for (int i = 0; senha[i] != '\0'; i++) {
-        senha[i] = toupper(senha[i]);
+        char c = toupper(bairro[i]);
+        if (c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+            strncat(senha, &c, 1);
+        }
     }
 
     printf("Senha gerada: %s\n", senha);
+    return 0;
 }
