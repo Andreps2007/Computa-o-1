@@ -1,33 +1,35 @@
 #include <stdio.h>
 #include <string.h>
 
-void intercalar_frases(char f1[], char f2[]) {
-    char *palavras1[50], *palavras2[50], resultado[200] = "";
-    int n1 = 0, n2 = 0;
+int main() {
+    char frase1[200], frase2[200];
+    char resultado[400] = "";
+    char *palavra1, *palavra2;
 
-    char *token = strtok(f1, " ");
-    while (token) {
-        palavras1[n1++] = token;
-        token = strtok(NULL, " ");
-    }
+    printf("Digite a primeira frase:\n");
+    fgets(frase1, sizeof(frase1), stdin);
+    frase1[strcspn(frase1, "\n")] = '\0'; // remove o \n do final
 
-    token = strtok(f2, " ");
-    while (token) {
-        palavras2[n2++] = token;
-        token = strtok(NULL, " ");
-    }
+    printf("Digite a segunda frase:\n");
+    fgets(frase2, sizeof(frase2), stdin);
+    frase2[strcspn(frase2, "\n")] = '\0';
 
-    int max = n1 > n2 ? n1 : n2;
-    for (int i = 0; i < max; i++) {
-        if (i < n1) {
-            strcat(resultado, palavras1[i]);
+    palavra1 = strtok(frase1, " ");
+    palavra2 = strtok(frase2, " ");
+
+    while (palavra1 != NULL || palavra2 != NULL) {
+        if (palavra1 != NULL) {
+            strcat(resultado, palavra1);
             strcat(resultado, " ");
+            palavra1 = strtok(NULL, " ");
         }
-        if (i < n2) {
-            strcat(resultado, palavras2[i]);
+        if (palavra2 != NULL) {
+            strcat(resultado, palavra2);
             strcat(resultado, " ");
+            palavra2 = strtok(NULL, " ");
         }
     }
 
-    printf("Frase intercalada: %s\n", resultado);
+    printf("Frase intercalada:\n%s\n", resultado);
+    return 0;
 }
